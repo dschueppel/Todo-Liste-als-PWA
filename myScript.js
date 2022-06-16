@@ -1,3 +1,35 @@
+var listData = 
+{
+    loggedIn: false,
+    loginData:
+    {
+        login:
+        {
+            name: "",
+            password: ""
+        },
+        register:
+        {
+            name: "",
+            password: "",
+            confirmPassword: ""
+        }
+    },
+    listState: "menu",
+    listTab: "list",
+    listTabs: [
+        {
+            id: "list", 
+            name: "List"
+        },
+        {
+            id: "Lists", 
+            name: "Lists"
+        }]
+	
+	// TODO: Refine data
+}
+
 var listFunctions =
 {
     autoLoginUser: function()
@@ -126,3 +158,12 @@ var listFunctions =
         // TODO: submit the real data
     },
 };
+
+// import { createApp } from 'vue';
+
+var app = Vue.createApp(
+    {
+        data: listData,
+        methods: listFunctions,
+        created: listFunctions.onAppStart
+    }).mount("#app");

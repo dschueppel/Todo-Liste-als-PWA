@@ -6,7 +6,50 @@
 		<link rel="stylesheet" href="myStyle.css">
 	</head>
 	<body>
-		<script src="myScript.js"></script>
+		<div>
+			<p>Hier wird noch gebaut :-)</p>
+		</div>
+		<div id="app">
+			<div v-if="!loggedIn">
+				<div class="loginarea">
+					<p>Login</p>
+					<table>
+						<tr>
+							<td>Name </td>
+							<td><input v-model="loginData.login.name"/></td>
+						</tr>
+						<tr>
+							<td>Password </td>
+							<td><input v-model="loginData.login.password" type="password" /></td>
+						</tr>
+					</table>
+					<button v-on:click="loginUser">Login</button>
+				</div><br/>
+				<div class="loginarea">
+					<p>Register</p>
+					<table>
+						<tr>
+							<td>Name </td>
+							<td><input v-model="loginData.register.name"/></td>
+						</tr>
+						<tr>
+							<td>Password </td>
+							<td><input v-model="loginData.register.password" type="password" /></td>
+						</tr>
+						<tr>
+							<td>Confirm Password </td>
+							<td><input v-model="loginData.register.confirmPassword" type="password" /></td>
+						</tr>
+					</table>
+					<button v-on:click="registerUser">Register</button>
+				</div>
+			</div>
+			<div v-else>
+				<p>Eingeloggt</p>
+			</div>
+		</div>
+		<script src="jquery-3.6.0.min.js"></script>
 		<script src="vue.global.prod.js"></script>
+		<script src="myScript.js"></script>
 	</body>
 </html>
