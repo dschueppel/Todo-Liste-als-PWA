@@ -2,7 +2,40 @@ body {
 	background-color: darkgreen;
 	color: white;
 	font-size: 2em;
+	font-family: Arial;
 	text-align: center;
 }
 table {
 	margin: 0 auto;
+}
+button {
+    background: linear-gradient(180deg, white, rgb(199, 248, 255));
+    border: 4px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.5s;
+	font-size: 0.8em;
+}
+button:hover {
+    transform: scale(1.05);
+    filter: hue-rotate(50deg);
+}
+input{
+    background: linear-gradient(180deg, #dcddff, #ffffff);
+    border: 4px solid black;
+    border-radius: 64px;
+}
+#loggedIn, #loggedOut {
+	display: none;
+}
+.loginarea input {
+    height: 1em;
+    font-size: 1em;
+    width: 60%;
+}
+.loginarea button {
+    /*width: 5em;
+    height: 2em;
+    font-size: 0.8em;
+	*/
+}

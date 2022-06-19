@@ -10,46 +10,47 @@
 			<p>Hier wird noch gebaut :-)</p>
 		</div>
 		<div id="app">
-			<div v-if="!loggedIn">
+			<div id="loggedOut">
 				<div class="loginarea">
 					<p>Login</p>
-					<table>
+					<table onchange="listFunctions.update_login_data()">
 						<tr>
 							<td>Name </td>
-							<td><input v-model="loginData.login.name"/></td>
+							<td><input id="login_name"/></td>
 						</tr>
 						<tr>
-							<td>Password </td>
-							<td><input v-model="loginData.login.password" type="password" /></td>
+							<td>Passwort </td>
+							<td><input id="login_password" type="password" /></td>
 						</tr>
 					</table>
-					<button v-on:click="loginUser">Login</button>
+					<button onclick="listFunctions.loginUser()">Einloggen</button>
 				</div><br/>
 				<div class="loginarea">
-					<p>Register</p>
-					<table>
+					<p>Neu hier?</p>
+					<table onchange="listFunctions.update_reg_data()">
 						<tr>
 							<td>Name </td>
-							<td><input v-model="loginData.register.name"/></td>
+							<td><input id="reg_name"/></td>
 						</tr>
 						<tr>
-							<td>Password </td>
-							<td><input v-model="loginData.register.password" type="password" /></td>
+							<td>Passwort </td>
+							<td><input id="reg_password" type="password" /></td>
 						</tr>
 						<tr>
-							<td>Confirm Password </td>
-							<td><input v-model="loginData.register.confirmPassword" type="password" /></td>
+							<td>Bestätige Passwort </td>
+							<td><input id="reg_confirmPassword" type="password" /></td>
 						</tr>
 					</table>
-					<button v-on:click="registerUser">Register</button>
+					<button onclick="listFunctions.registerUser()">Registrieren</button>
 				</div>
 			</div>
-			<div v-else>
-				<p>Eingeloggt</p>
+			<div id="loggedIn">
+				<button onclick="listFunctions.logOut()">Ausloggen</button>
+				<p>Willkommen, <span id="username1">Gast</span></p>
 			</div>
 		</div>
 		<script src="jquery-3.6.0.min.js"></script>
-		<script src="vue.global.prod.js"></script>
+
 		<script src="myScript.js"></script>
 	</body>
 </html>

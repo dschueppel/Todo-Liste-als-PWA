@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 16. Jun 2022 um 15:10
+-- Erstellungszeit: 19. Jun 2022 um 19:27
 -- Server-Version: 10.4.24-MariaDB
 -- PHP-Version: 8.1.6
 
@@ -30,8 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `lists` (
   `id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
+  `done` tinyint(1) NOT NULL DEFAULT 0,
   `flag_important` tinyint(1) NOT NULL DEFAULT 0,
   `priority` tinyint(4) NOT NULL DEFAULT 0,
+  `hex_color` int(11) NOT NULL DEFAULT 16777215,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   `todo_text` varchar(1023) DEFAULT NULL
@@ -59,6 +61,14 @@ CREATE TABLE `users` (
   `name` varchar(63) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`) VALUES
+(1, 'David Schüppel', '$2y$10$P12N4Fd1pnmnKHPZLrzTae.DGskUZyv359zszSA57XUEtXZhLWqRe'),
+(2, 'Test 1', '$2y$10$CYr3dvwCBGdueH70cqOzouZX9TX94c1owKSZi4scQbaKk9oQn9Fey');
 
 --
 -- Indizes der exportierten Tabellen
@@ -96,13 +106,13 @@ ALTER TABLE `lists`
 -- AUTO_INCREMENT für Tabelle `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `sessionid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sessionid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=367;
 
 --
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

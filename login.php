@@ -30,12 +30,12 @@
             }
             else
             {
-                echo "Wrong Password!";
+                echo "Falsches Passwort!";
             }
         }
         else
         {
-            echo "User doesn't exist";
+            echo "Den Benutzer gibt es nicht.";
         }
     }
 ?>

@@ -30,12 +30,12 @@
             }
             else
             {
-                echo "Confirmation Password does not equal input Password!";
+                echo "Die Passwörter sind unterschiedlich!";
             }
         }
         else
         {
-            echo "User already exists!";
+            echo "Diesen Benutzer gibt es bereits!";
         }
     }
 ?>
