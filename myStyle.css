@@ -1,8 +1,8 @@
 body {
-	background-color: darkgreen;
+	background-color: #004400;
 	color: white;
 	font-size: 2em;
-	font-family: Arial;
+	font-family: Helvetica;
 	text-align: center;
 }
 table {
@@ -24,18 +24,53 @@ input{
     background: linear-gradient(180deg, #dcddff, #ffffff);
     border: 4px solid black;
     border-radius: 64px;
+	font-size: medium;
 }
+th, td {
+	padding: 0 5px;
+	border: 1px solid black;
+}
+table input[type=number] {
+	text-align: right;
+	width: 60px;
+}
+table input[type=checkbox] {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+input[type=color] {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+input[type=color]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type=color]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
 #loggedIn, #loggedOut {
 	display: none;
+}
+.td3 input:checked:after {
+	content: "!";
+	background-color: yellow;
+	display: block;
+    text-align: center;
+    height: 25px;
+	line-height: 25px;
+    font-weight: 900;
+}
+.loginarea td {
+	border: 0;
 }
 .loginarea input {
     height: 1em;
     font-size: 1em;
-    width: 60%;
-}
-.loginarea button {
-    /*width: 5em;
-    height: 2em;
-    font-size: 0.8em;
-	*/
 }

@@ -121,7 +121,7 @@ var listFunctions =
 				listData.loggedIn = false;
 				listData.listState = "menu";
 				loggedIn.style.display = "none";
-				loggedOut.style.display = "inline-flex";
+				loggedOut.style.display = "block";
 			}
 			else
 			{
@@ -175,6 +175,70 @@ var listFunctions =
 		listData.loginData.register.name = reg_name.value;
 		listData.loginData.register.password = reg_password.value;
 		listData.loginData.register.confirmPassword = reg_confirmPassword.value;
+	},
+	deleteRow: function(btn)
+	{
+		var row = btn.parentNode;
+		var id = row.rowIndex;
+		if (!confirm("Bist du sicher, dass du die "+id+". Zeile löschen willst?"))
+			return;
+		var par = row.parentNode;
+		var rows = par.childElementCount;
+		for (var i = id; i < rows; i++) {
+			par.rows[i].firstChild.innerText = i - 1;
+		}
+		row.parentNode.removeChild(row);
+	},
+	add_todo: function()
+	{
+		var docFrag = document.createDocumentFragment();
+		var eltr = document.createElement("tr");
+		docFrag.appendChild(eltr);
+		// Ein Fragment geht NICHT ins DOM!
+		
+		var types =
+		[
+			"",
+			"color",
+			"checkbox",
+			"checkbox",
+			"number",
+			"date",
+			"time"
+		];
+		
+		for (let j = 0; j < 8; j++) {
+			const td = eltr.insertCell();
+			td.className = "td" + j;
+			if (j == 0) {
+				td.innerText = main_list.childElementCount;
+				continue;
+			}
+			if (j != 7) {
+				var input = document.createElement('input');
+				input.type = types[j];
+				if (j == 4)
+					input.value = "0";
+				else if (j == 6) {
+					var chk = document.createElement('input');
+					chk.type = "checkbox";
+					td.appendChild(chk);
+				}
+			}
+			else {
+				var input = document.createElement('textarea');
+			}
+			td.appendChild(input);
+		}
+		
+		var btn = document.createElement('button');
+		btn.innerText = "Löschen";
+		btn.addEventListener('click', function() {
+			listFunctions.deleteRow(this);
+		});
+		
+		eltr.appendChild(btn);
+		main_list.appendChild(docFrag); // Erst hier
 	}
 };
 

@@ -47,6 +47,20 @@
 			<div id="loggedIn">
 				<button onclick="listFunctions.logOut()">Ausloggen</button>
 				<p>Willkommen, <span id="username1">Gast</span></p>
+				<h2>Deine Todos</h2>
+				<button id="btn_add" onclick="listFunctions.add_todo()">Neue Erinnerung</button>
+				<table id="main_list">
+					<tr>
+						<th>Nr.</th>
+						<th>Farbe</th>
+						<th>Erledigt?</th>
+						<th>Wichtig?</th>
+						<th>Priorität</th>
+						<th>Datum</th>
+						<th>Uhrzeit</th>
+						<th>Beschreibung</th>
+					</tr>
+				</table>
 			</div>
 		</div>
 		<script src="jquery-3.6.0.min.js"></script>
