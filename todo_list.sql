@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 19. Jun 2022 um 19:27
+-- Erstellungszeit: 21. Jun 2022 um 17:51
 -- Server-Version: 10.4.24-MariaDB
 -- PHP-Version: 8.1.6
 
@@ -33,11 +33,30 @@ CREATE TABLE `lists` (
   `done` tinyint(1) NOT NULL DEFAULT 0,
   `flag_important` tinyint(1) NOT NULL DEFAULT 0,
   `priority` tinyint(4) NOT NULL DEFAULT 0,
-  `hex_color` int(11) NOT NULL DEFAULT 16777215,
+  `hex_color` int(11) NOT NULL DEFAULT 0,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   `todo_text` varchar(1023) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `lists`
+--
+
+INSERT INTO `lists` (`id`, `userid`, `done`, `flag_important`, `priority`, `hex_color`, `date`, `time`, `todo_text`) VALUES
+(1, 1, 0, 1, 40, 16409600, NULL, NULL, 't5vt'),
+(29, 2, 1, 0, 0, 2428632, NULL, NULL, '35tw53vzw45zw4'),
+(3, 1, 1, 0, 127, 2743256, '2022-06-30', '14:59:00', 'zbe46ze6zue'),
+(6, 1, 1, 0, 0, 0, NULL, NULL, '2'),
+(23, 2, 0, 0, 0, 12584946, NULL, NULL, NULL),
+(10, 1, 0, 0, 13, 16514816, NULL, NULL, '34t3t 7 hier'),
+(12, 1, 0, 0, 0, 16711901, NULL, NULL, NULL),
+(26, 2, 1, 0, 0, 15788032, NULL, NULL, NULL),
+(13, 2, 1, 0, 33, 2678800, '2022-06-08', NULL, '3t3tth\n4tz*t*t3´r'),
+(30, 2, 0, 0, 0, 12033951, NULL, NULL, NULL),
+(20, 1, 0, 0, 0, 16040981, NULL, NULL, '2434'),
+(21, 1, 0, 0, 0, 13625862, NULL, NULL, 'ef+we+-3'),
+(31, 2, 0, 0, 0, 1227234, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -49,6 +68,13 @@ CREATE TABLE `sessions` (
   `sessionid` int(11) NOT NULL,
   `userid` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `sessions`
+--
+
+INSERT INTO `sessions` (`sessionid`, `userid`) VALUES
+(366, 1);
 
 -- --------------------------------------------------------
 
@@ -100,7 +126,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `lists`
 --
 ALTER TABLE `lists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT für Tabelle `sessions`

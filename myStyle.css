@@ -54,7 +54,9 @@ input[type=color]::-webkit-color-swatch {
     border: none;
     border-radius: 50%;
 }
-
+#info1 {
+	visibility: hidden;
+}
 #loggedIn, #loggedOut {
 	display: none;
 }

@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div>
-			<p>Hier wird noch gebaut :-)</p>
+			<p>Die Aufgabe könnte soweit fertig sein, oder? :-)</p>
 		</div>
 		<div id="app">
 			<div id="loggedOut">
@@ -47,8 +47,8 @@
 			<div id="loggedIn">
 				<button onclick="listFunctions.logOut()">Ausloggen</button>
 				<p>Willkommen, <span id="username1">Gast</span></p>
+				<p id="info1">Speichern ...</p>
 				<h2>Deine Todos</h2>
-				<button id="btn_add" onclick="listFunctions.add_todo()">Neue Erinnerung</button>
 				<table id="main_list">
 					<tr>
 						<th>Nr.</th>
@@ -61,6 +61,7 @@
 						<th>Beschreibung</th>
 					</tr>
 				</table>
+				<br><button id="btn_add" onclick="listFunctions.add_todo(1)">Neue Erinnerung</button>
 			</div>
 		</div>
 		<script src="jquery-3.6.0.min.js"></script>
