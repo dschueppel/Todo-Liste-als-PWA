@@ -84,6 +84,7 @@ var listFunctions =
 				{
 					listData.loggedIn = true;
 					listFunctions.getUserName();
+					listFunctions.getList();
 				}
 				else
 				{
